@@ -8,8 +8,9 @@ const SignUp = () => {
   catch { }
   
 
-  return (
+  return (<>
     <div>SignUp</div>
+    <p>halloj</p></>
   )
 }
 
