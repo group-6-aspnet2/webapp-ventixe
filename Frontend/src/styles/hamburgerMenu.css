@@ -4,13 +4,11 @@
 }
 
 .hamburger-menu-button{
-    /* background-color: var(--secondary-100); */
-    background-color:  var(--cool-grey-20);
+    background-color:  transparent;
     height: 40px;
     width: 40px;
     border: none;
     font-size: 1.25rem;
-    /* color: var(--grey-10); */
     color: var(--grey-100);
     border-radius: 50%;
     display: flex;
@@ -23,8 +21,13 @@
     margin: 15px;
 
     &:hover{
-        /* background-color: var(--secondary-110); */
         cursor: pointer;
+    }
+
+
+    
+    @media screen and (min-width: 425px) {
+       margin: 15px 35px;
     }
 
     @media screen and (min-width: 768px) {

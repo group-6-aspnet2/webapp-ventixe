@@ -12,7 +12,7 @@ const SignIn = lazy(() => import("../partials/pages/auth/SignIn"));
 
 const UserDashboard = lazy(() => import("../partials/pages/user/Dashboard"));
 const UserBookings = lazy(() => import("../partials/pages/user/Bookings"));
-
+const UserProfile = lazy(() => import("../partials/pages/user/UserProfile"));
 const AdminDashboard = lazy(() => import("../partials/pages/admin/Dashboard"));
 const AdminBookings = lazy(() => import("../partials/pages/admin/Bookings"));
 
@@ -34,6 +34,7 @@ export const routes = [
     children: [
       { path: "/dashboard", element: <UserDashboard /> },
       { path: "/bookings", element: <UserBookings /> },
+      { path: "/profile", element: <UserProfile /> },
     ],
   },
   {
