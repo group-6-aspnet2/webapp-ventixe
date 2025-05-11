@@ -1,12 +1,16 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import React from "react";
+import { Outlet } from "react-router-dom";
 
 const PortalLayout = () => {
   return (
     <div className="portal-layout">
-      <Outlet />
+      <aside>aside</aside>
+      <header>header</header>
+      <main>
+        <Outlet />
+      </main>
     </div>
-  )
-}
+  );
+};
 
-export default PortalLayout
+export default PortalLayout;

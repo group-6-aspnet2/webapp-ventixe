@@ -80,9 +80,47 @@ html, body {
 }
 
 .auth-layout {
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
 }
 
 .portal-layout {
-    
+    display: grid;
+    grid-template-columns:auto  1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "side top" "side main";
+    height: 100dvh;
 }
+
+header {
+    grid-area: top;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 5rem;
+    align-items: center;
+    background-color: var(--cool-grey-40);
+}
+
+main {
+    grid-area: main;
+    padding: 2rem;
+    background-color: var(--background-color);
+}
+aside {
+    grid-area: side;
+    border-right: 1px solid var(--border-color);
+    padding: 1rem;
+    width: 200px;
+    background-color: var(--aside-background-color);
+    display: none;
+
+    @media screen and (min-width: 768px) {
+        display: block;
+    }
+}
+
+
