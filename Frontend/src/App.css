@@ -70,7 +70,7 @@
 }
 
 html, body {
-    font-family: var(--font);
+    font-family: var(--font-standard);
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
@@ -96,13 +96,19 @@ html, body {
 
 header {
     grid-area: top;
-    border-bottom: 1px solid var(--border-color);
-    padding: 1rem 2rem;
+    padding:0.5rem 1rem;
     display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 5rem;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
-    background-color: var(--cool-grey-40);
+    background-color: var(--cool-grey-20);
+    border-radius: 12px;
+    margin: 10px;
+    width: 94dvw;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+        width: auto;
+    }
 }
 
 main {
