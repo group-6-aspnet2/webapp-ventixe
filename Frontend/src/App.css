@@ -70,7 +70,7 @@
 }
 
 html, body {
-    font-family: var(--font);
+    font-family: var(--font-standard);
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
@@ -80,9 +80,54 @@ html, body {
 }
 
 .auth-layout {
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
 }
 
 .portal-layout {
-    
+    display: grid;
+    grid-template-columns:auto  1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "side top" "side main";
+    height: 100dvh;
 }
+
+header {
+    grid-area: top;
+    padding:0.5rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    background-color: var(--cool-grey-20);
+    border-radius: 10px;
+    margin: 10px;
+    width: 94dvw;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+        width: auto;
+    }
+}
+
+main {
+    grid-area: main;
+    padding: 2rem;
+    background-color: var(--background-color);
+}
+aside {
+    grid-area: side;
+    padding: 1rem;
+    margin: 10px 0 10px 10px;
+    width: 200px;
+    background-color: var(--aside-background-color);
+    display: none;
+    border-radius: 10px;
+
+    @media screen and (min-width: 768px) {
+        display: block;
+    }
+}
+
+
