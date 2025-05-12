@@ -101,7 +101,7 @@ header {
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     background-color: var(--cool-grey-20);
-    border-radius: 12px;
+    border-radius: 10px;
     margin: 10px;
     width: 94dvw;
     text-align: center;
@@ -118,11 +118,12 @@ main {
 }
 aside {
     grid-area: side;
-    border-right: 1px solid var(--border-color);
     padding: 1rem;
+    margin: 10px 0 10px 10px;
     width: 200px;
     background-color: var(--aside-background-color);
     display: none;
+    border-radius: 10px;
 
     @media screen and (min-width: 768px) {
         display: block;

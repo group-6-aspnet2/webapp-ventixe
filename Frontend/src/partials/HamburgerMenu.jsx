@@ -1,23 +1,8 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import "../styles/hamburgerMenu.css";
 
-function HamburgerMenu() {
+function HamburgerMenu({ listItems }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [listItems, setListItems] = useState([
-    {
-      path: "/dashboard",
-      name: "Dashboard",
-    },
-    {
-      path: "/bookings",
-      name: "Bookings",
-    },
-    {
-      path: "/profile",
-      name: "Profile",
-    },
-  ]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -36,7 +21,11 @@ function HamburgerMenu() {
       <ul className={"hamburger-menu-list" + (isOpen ? " open" : "")}>
         {listItems.map((item, index) => (
           <li key={index} className="hamburger-menu-item">
-            <NavLink to={item.path} className="hamburger-menu-link">
+            <NavLink
+              to={item.path}
+              className="hamburger-menu-link"
+              onClick={() => setIsOpen(false)}
+            >
               {item.name}
             </NavLink>
           </li>
