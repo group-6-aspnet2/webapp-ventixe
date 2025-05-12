@@ -26,7 +26,8 @@ function HamburgerMenu({ listItems }) {
               className="hamburger-menu-link"
               onClick={() => setIsOpen(false)}
             >
-              {item.name}
+              <span>{item.icon}</span>
+              <span>{item.name}</span>
             </NavLink>
           </li>
         ))}

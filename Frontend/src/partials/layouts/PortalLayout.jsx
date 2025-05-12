@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import HamburgerMenu from "../HamburgerMenu";
-import "../../styles/hamburgerMenu.css";
+import "../../styles/menu.css";
 
 const PortalLayout = () => {
   const [listItems, setListItems] = useState([
