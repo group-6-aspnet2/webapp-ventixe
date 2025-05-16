@@ -40,7 +40,7 @@
     --cool-grey-80: #56565C;
     --cool-grey-90: #39393D;
     --cool-grey-100: #131314;
-/* Main */
+    /* Main */
     --background-color: var(--grey-10);
     --secondary-background-color: var(--grey-20);
     --aside-background-color: var(--cool-grey-10);
