@@ -12,10 +12,9 @@ const BookingCard = ({ booking }) => {
           {booking.statusName}
         </StatusButton>
       </div>
-      <p>{booking.date}</p>
-      <p>{booking.time}</p>
+      <p>{booking.eventDate}</p>
+      <p>{booking.eventTime}</p>
       <p>Invoice Id: {booking.invoiceId}</p>
-
       <div className="booking-category-container">
         <span>
           {booking.ticketQuantity}x {booking.ticketPrice}
