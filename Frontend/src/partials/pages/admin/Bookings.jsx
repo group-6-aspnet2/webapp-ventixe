@@ -74,9 +74,9 @@ const Bookings = () => {
       <h1 className="booking-headline">Admin Bookings</h1>
       <div className="bookings-container">
         {bookings.map((b) => (
-          <BookingCard booking={b} key={b.id} />
+          <BookingCard isAdmin={true} booking={b} key={b.id} />
         ))}
-      </div>{" "}
+      </div>
     </div>
   );
 };

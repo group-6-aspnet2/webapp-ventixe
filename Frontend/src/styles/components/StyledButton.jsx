@@ -4,7 +4,7 @@ import { colors } from "./Variables";
 export const StyledButton = styled.button`
   background-color: ${colors.secondary_100};
   color: ${colors.grey_10};
-  padding: 0.8rem 1rem;
+  padding: 0.7rem 0.8rem;
   border-radius: 30px;
   font-size: 1rem;
   border: none;
