@@ -9,7 +9,7 @@ const PortalLayout = () => {
       path: "/admin/dashboard",
       name: "Admin Dashboard",
       // img: "/dashboard-icon.svg",
-      icon: <i class="fa-regular fa-border-all"></i>,
+      icon: <i className="fa-regular fa-border-all"></i>,
       onlyAdmin: true,
       isAuthenticated: true,
     },
@@ -17,14 +17,14 @@ const PortalLayout = () => {
       path: "/admin/bookings",
       name: "Admin Bookings",
       // img: "/bookings-iconsvg.svg",
-      icon: <i class="fa-regular fa-square-check"></i>,
+      icon: <i className="fa-regular fa-square-check"></i>,
       onlyAdmin: true,
       isAuthenticated: true,
     },
     {
       path: "/profile",
       name: "Profile",
-      icon: <i class="fa-regular fa-user"></i>,
+      icon: <i className="fa-regular fa-user"></i>,
       onlyAdmin: false,
       isAuthenticated: true,
     },
@@ -32,7 +32,7 @@ const PortalLayout = () => {
       path: "/bookings",
       name: "User Bookings",
       // img: "/bookings-iconsvg.svg",
-      icon: <i class="fa-regular fa-square-check"></i>,
+      icon: <i className="fa-regular fa-square-check"></i>,
       onlyAdmin: false,
       isAuthenticated: true,
     },
@@ -40,7 +40,7 @@ const PortalLayout = () => {
       path: "/dashboard",
       name: "User Dashboard",
       // img: "/dashboard-icon.svg",
-      icon: <i class="fa-regular fa-border-all"></i>,
+      icon: <i className="fa-regular fa-border-all"></i>,
       onlyAdmin: false,
       isAuthenticated: true,
     },
@@ -65,7 +65,11 @@ const PortalLayout = () => {
         <header>
           <img alt="ventixe-logo" src="/Logo.svg" />
           <span>Header</span>
-          <HamburgerMenu listItems={listItems} />
+          <HamburgerMenu
+            listItems={listItems.filter(
+              (x) => x.isAuthenticated && x.onlyAdmin
+            )}
+          />
         </header>
         <main>
           <Outlet />

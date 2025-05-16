@@ -120,6 +120,7 @@
             justify-content: flex-start;
             align-items: center;
             gap: 15px;
+            color: var(--secondary-200);
 
             &:hover{
                 cursor: pointer;

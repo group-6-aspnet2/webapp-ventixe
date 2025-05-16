@@ -113,8 +113,13 @@ header {
 
 main {
     grid-area: main;
-    padding: 2rem;
+    padding: 1rem;
     background-color: var(--background-color);
+
+    
+     @media screen and (min-width: 1200px) {
+        padding: 2rem;
+    }
 }
 aside {
     grid-area: side;
