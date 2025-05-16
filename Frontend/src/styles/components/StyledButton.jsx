@@ -33,3 +33,24 @@ export const CategoryButton = styled(StyledButton)`
   gap: 0.5rem;
   justify-content: center;
 `;
+
+export const EventCategoryButton = styled(StyledButton)`
+  background-color: ${colors.grey_10};
+  color: ${colors.grey_90};
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+`;
+
+export const AdminCategoryButton = styled(StyledButton)`
+  background-color: ${({ adminStatusName }) =>
+    adminStatusName === "Active"
+    ? colors.primary_30
+    : adminStatusName === "Draft"
+    ? colors.yellow_90
+    : adminStatusName === "Past"
+    ? colors.grey_60
+    : colors.primary_30};  
+  color: ${colors.grey_90};
+`;
