@@ -30,7 +30,7 @@ const PortalLayout = () => {
     },
     {
       path: "/bookings",
-      name: "User Bookings",
+      name: "Bookings",
       // img: "/bookings-iconsvg.svg",
       icon: <i className="fa-regular fa-square-check"></i>,
       onlyAdmin: false,
@@ -38,7 +38,7 @@ const PortalLayout = () => {
     },
     {
       path: "/dashboard",
-      name: "User Dashboard",
+      name: "Dashboard",
       // img: "/dashboard-icon.svg",
       icon: <i className="fa-regular fa-border-all"></i>,
       onlyAdmin: false,
@@ -51,7 +51,7 @@ const PortalLayout = () => {
         <aside>
           <ul className="aside-menu-list">
             {listItems
-              .filter((x) => x.isAuthenticated && x.onlyAdmin)
+              // .filter((x) => x.isAuthenticated && x.onlyAdmin)
               .map((item, index) => (
                 <li key={index} className="aside-menu-item">
                   <NavLink to={item.path} className={"aside-menu-link"}>
@@ -66,9 +66,10 @@ const PortalLayout = () => {
           <img alt="ventixe-logo" src="/Logo.svg" />
           <span>Header</span>
           <HamburgerMenu
-            listItems={listItems.filter(
-              (x) => x.isAuthenticated && x.onlyAdmin
-            )}
+            // listItems={listItems.filter(
+            //   (x) => x.isAuthenticated && x.onlyAdmin
+            // )}
+            listItems={listItems}
           />
         </header>
         <main>
