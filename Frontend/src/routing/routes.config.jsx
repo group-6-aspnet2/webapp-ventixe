@@ -35,6 +35,7 @@ export const routes = [
       { path: "/dashboard", element: <UserDashboard /> },
       { path: "/bookings", element: <UserBookings /> },
       { path: "/profile", element: <UserProfile /> },
+      { path: "/events", element: <UserEvents/>}
     ],
   },
   {
@@ -44,6 +45,7 @@ export const routes = [
     children: [
       { path: "/admin/dashboard", element: <AdminDashboard /> },
       { path: "/admin/bookings", element: <AdminBookings /> },
+      { path: "/admin/events", element: <AdminEvents/>}
     ],
   },
   {
