@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  CategoryButton,
-  StatusButton,
-} from "../styles/components/StyledButton";
+import { StatusButton } from "../styles/components/StyledButton";
 import CategoryLabel from "./CategoryLabel";
 
 const BookingCard = ({ booking }) => {
@@ -11,19 +8,21 @@ const BookingCard = ({ booking }) => {
       <div className="booking-card-header">
         <span className="card-title">{booking.eventName}</span>
 
-        <StatusButton status={booking.status.toUpperCase()}>
-          {booking.status}
+        <StatusButton status={booking.statusName.toUpperCase()}>
+          {booking.statusName}
         </StatusButton>
       </div>
       <p>{booking.date}</p>
       <p>{booking.time}</p>
+      <p>Invoice Id: {booking.invoiceId}</p>
+
       <div className="booking-category-container">
         <span>
           {booking.ticketQuantity}x {booking.ticketPrice}
         </span>
-        <CategoryLabel category={booking.ticketCategory} />
+        <CategoryLabel category={booking.ticketCategoryName} />
       </div>
-      <p>Total: {booking.totalPrice} sek</p>
+      <p>Total: {booking.ticketQuantity * booking.ticketPrice} sek</p>
     </div>
   );
 };
