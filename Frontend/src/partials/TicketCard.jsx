@@ -1,7 +1,6 @@
-import React from "react";
-
+import "../styles/ticket.css";
 const TicketCard = ({ ticket }) => {
-  return <div>{ticket.id}</div>;
+  return <div className="ticket-card">{ticket.id}</div>;
 };
 
 export default TicketCard;
