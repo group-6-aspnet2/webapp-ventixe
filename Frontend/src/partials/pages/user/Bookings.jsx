@@ -7,12 +7,13 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
 
   const getBookings = useCallback(async () => {
-    const bookingUrl = "https://localhost:7221/api";
-    const endpoint = "bookings"; // TODO ändra till userns bokningar baserat på userId från token (som ligger i local storage)
-    await Get(bookingUrl, endpoint, (response) => {
-      setBookings(response);
-      console.log(response);
-    });
+    await Get(
+      "https://bookingserviceprovider-pe-gehkczd6hmhabreg.swedencentral-01.azurewebsites.net/api",
+      `bookings/user/${localStorage.getItem("userId")}`,
+      (response) => {
+        setBookings(response);
+      }
+    );
   }, []);
 
   useEffect(() => {
@@ -21,7 +22,7 @@ const Bookings = () => {
 
   return (
     <div className="booking-body">
-      <h1 className="booking-headline">Admin Bookings</h1>
+      <h1 className="booking-headline">Your Bookings</h1>
       <div className="bookings-container">
         {bookings.map((b) => (
           <BookingCard isAdmin={false} booking={b} key={b.id} />
