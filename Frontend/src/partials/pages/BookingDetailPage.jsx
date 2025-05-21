@@ -49,7 +49,6 @@ const BookingDetailPage = () => {
       (response) => {
         setActiveBooking(response);
         calculateTimes(response.eventTime);
-        console.log(response.eventTime);
       }
     );
   }, [params.id]);

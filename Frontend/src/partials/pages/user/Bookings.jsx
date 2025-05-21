@@ -12,7 +12,6 @@ const Bookings = () => {
       `bookings/user/${localStorage.getItem("userId")}`,
       (response) => {
         setBookings(response);
-        console.log(response);
       }
     );
   }, []);
