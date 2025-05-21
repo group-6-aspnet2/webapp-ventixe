@@ -52,7 +52,7 @@ const PortalLayout = () => {
       onlyAdmin: false,
       isAuthenticated: true,
     },
-       {
+    {
       path: "/events",
       name: "Events",
       // img: "/events-iconsvg.svg",
@@ -80,7 +80,7 @@ const PortalLayout = () => {
         </aside>
         <header>
           <img alt="ventixe-logo" src="/Logo.svg" />
-          <span>Header</span>
+          <span>Ventixe</span>
           <HamburgerMenu
             // listItems={listItems.filter(
             //   (x) => x.isAuthenticated && x.onlyAdmin
