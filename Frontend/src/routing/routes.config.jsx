@@ -39,6 +39,7 @@ export const routes = [
       { path: "/bookings", element: <UserBookings /> },
       { path: "/profile", element: <UserProfile /> },
       { path: "/events", element: <UserEvents /> },
+      { path: "/booking/:id", element: <BookingDetail /> },
     ],
   },
   {
