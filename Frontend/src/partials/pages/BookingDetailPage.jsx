@@ -5,10 +5,13 @@ import { Get } from "../../helpers/ApiHelper";
 import BookingCard from "../BookingCard";
 import "../../styles/booking.css";
 import { DetailSection } from "../../styles/components/BookingDetailSection";
+import TicketCard from "../TicketCard";
 
 const BookingDetailPage = () => {
   const [activeBooking, setActiveBooking] = useState(null);
   const [schedule, setSchedule] = useState([]);
+  const [tickets, setTickets] = useState([]);
+
   const params = useParams();
   const navigate = useNavigate();
 
@@ -53,9 +56,21 @@ const BookingDetailPage = () => {
     );
   }, [params.id]);
 
+  const fetchTicketsToBooking = useCallback(async () => {
+    await Get(
+      "https://pe-ticketserviceprovider-c5auddc9buh2d0cp.swedencentral-01.azurewebsites.net/api",
+      `tickets/booking/${params.id}`,
+      (response) => {
+        setTickets(response);
+        console.log(response);
+      }
+    );
+  }, [params.id]);
+
   useEffect(() => {
     fetchBooking();
-  }, [fetchBooking]);
+    fetchTicketsToBooking();
+  }, [fetchBooking, fetchTicketsToBooking]);
 
   return (
     <div className="booking-detail-page">
@@ -88,6 +103,13 @@ const BookingDetailPage = () => {
                 </li>
               ))}
             </ul>
+          </DetailSection>
+
+          <DetailSection name="tickets">
+            {tickets.length > 0 &&
+              tickets.map((ticket) => (
+                <TicketCard key={ticket.id} ticket={ticket}></TicketCard>
+              ))}
           </DetailSection>
 
           <DetailSection name="terms">
