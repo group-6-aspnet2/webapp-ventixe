@@ -60,7 +60,16 @@
                     font-size: 1.5rem;
                     font-weight: 600;
                 }
+            }
 
+            .card-event-date{
+                margin: 0.3rem 0;
+            }
+
+            .card-event-time{
+                color: var(--grey-60);
+                font-size: 0.9rem;
+                margin-top: 0;
             }
 
             .booking-category-container {
