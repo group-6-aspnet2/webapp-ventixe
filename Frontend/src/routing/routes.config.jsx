@@ -18,6 +18,8 @@ const AdminDashboard = lazy(() => import("../partials/pages/admin/Dashboard"));
 const AdminBookings = lazy(() => import("../partials/pages/admin/Bookings"));
 const AdminEvents = lazy(() => import("../partials/pages/admin/Events"));
 const BookingDetail = lazy(() => import("../partials/pages/BookingDetailPage"));
+const AdminTickets = lazy(() => import("../partials/pages/admin/Tickets"));
+const UserTickets = lazy(() => import("../partials/pages/user/Tickets"));
 
 export const routes = [
   {
@@ -40,6 +42,7 @@ export const routes = [
       { path: "/profile", element: <UserProfile /> },
       { path: "/events", element: <UserEvents /> },
       { path: "/booking/:id", element: <BookingDetail /> },
+      { path: "/tickets", element: <UserTickets /> },
     ],
   },
   {
@@ -51,6 +54,7 @@ export const routes = [
       { path: "/admin/bookings", element: <AdminBookings /> },
       { path: "/admin/events", element: <AdminEvents /> },
       { path: "/admin/booking/:id", element: <BookingDetail /> },
+      { path: "/admin/tickets", element: <AdminTickets /> },
     ],
   },
   {
