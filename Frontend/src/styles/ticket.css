@@ -1,0 +1,5 @@
+.ticket-card {
+    background-color: var(--secondary-60);
+    padding: 1rem;
+    margin: 1rem;
+}

@@ -23,7 +23,7 @@ const Tickets = () => {
     <div>
       {tickets.length > 0 &&
         tickets.map((ticket) => (
-          <div key={ticket.id}>ticket id {ticket.id} </div>
+          <TicketCard key={ticket.id} ticket={ticket}></TicketCard>
         ))}
     </div>
   );

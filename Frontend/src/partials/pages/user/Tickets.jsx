@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Get } from "../../../helpers/ApiHelper";
+import TicketCard from "../../TicketCard";
 
 const Tickets = () => {
   const [tickets, setTickets] = useState([]);
@@ -23,11 +24,7 @@ const Tickets = () => {
     <div>
       {tickets.length > 0 &&
         tickets.map((ticket) => (
-          <div key={ticket.id}>
-            <p>ticket id {ticket.id}</p>
-            <p>user id {ticket.userId}</p>
-            <p>event id {ticket.eventId}</p>
-          </div>
+          <TicketCard key={ticket.id} ticket={ticket}></TicketCard>
         ))}
     </div>
   );
