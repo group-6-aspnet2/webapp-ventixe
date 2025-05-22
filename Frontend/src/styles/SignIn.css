@@ -1,0 +1,23 @@
+.singin-container {
+    max-width: 400px;
+}
+
+.signin-container h2 {
+    text-align: center;
+}
+
+.signin-input {
+    width: 100%;
+}
+
+.signin-button {
+    width: 100%;
+}
+
+.signin-button:hover {
+}
+
+.signin-error {
+    color: red;
+    text-align: center;
+}

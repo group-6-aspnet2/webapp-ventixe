@@ -25,11 +25,12 @@ const SignIn = () => {
       }
 
       localStorage.setItem("token", data.accessToken);
+      localStorage.setItem("userId", data.userId);
       setError("");
       navigate("/profile");
     }
     catch (err) {
-      setError(err.Message);
+      setError(err.message);
     }
   };
 
