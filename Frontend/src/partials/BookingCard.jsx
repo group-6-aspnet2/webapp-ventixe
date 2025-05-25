@@ -48,14 +48,19 @@ const BookingCard = ({ booking, isAdmin }) => {
           <CategoryLabel category={booking.ticketCategoryName} />
         </div>
         <p>Total: {booking.ticketQuantity * booking.ticketPrice} sek</p>
-        <p>Invoice Id: {booking.invoiceId}</p>
+        {booking.invoiceId && <p>Invoice Id: {booking.invoiceId}</p>}
         {isAdmin && (
-          <p>
-            Customer: {booking.firstName} {booking.lastName}
-          </p>
+          <>
+            <p>
+              Customer: {booking.firstName} {booking.lastName}
+            </p>{" "}
+            <p>
+              UserId: <p className="card-event-time">{booking.userId}</p>
+            </p>
+          </>
         )}
         <p>
-          Created:{" "}
+          Created:
           {new Date(booking.createDate).toLocaleString("sv-SE", {
             year: "numeric",
             month: "2-digit",
