@@ -1,20 +1,22 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { StyledButton } from "../../styles/components/StyledButton";
-import { Get } from "../../../helpers/ApiHelper";
+import { Get } from "../../helpers/ApiHelper";
 import InvoiceCard from "../InvoiceCard";
 import TicketDetailsTable from "../../styles/components/TicketDetailsTable";
 import { DetailSection } from "../../styles/components/BookingDetailSection";
-import "../../../styles/invoice.css";
+import "../../styles/invoice.css";
+
+import { mockInvoices } from "../../mocks/mockInvoices";
 
 const InvoiceDetailPage = () => {
-    const [invoice, setInvoice] = useState(null);
+ /*   const [invoice, setInvoice] = useState(null);
     const params = useParams();
     const navigate = useNavigate();
 
     const getInvoice = useCallback(async () => {
         await Get(
-            "https://invoiceserviceprovider-app.azurewebsites.net/api", // URL till invoiceserviceprovider
+            "http://localhost:5299/api", // URL till invoiceserviceprovider
             `invoices/${params.id}`,
             (response) => {
                 setInvoice(response);
@@ -26,7 +28,30 @@ const InvoiceDetailPage = () => {
         if (params.id) getInvoice();
     }, [getInvoice, params.id]);
 
-    if (!invoice) return <div className="loading">Loading invoice...</div>;
+    if (!invoice) {
+        return (
+            <div className="loading">
+                Loading invoice...
+            </div>
+        );
+    }   
+*/
+    const { id } = useParams();
+    const navigate = useNavigate();
+    const [invoice, setInvoice] = useState(null);
+
+    useEffect(() => {
+        const inv = mockInvoices.find(inv => inv.id === id);
+        setInvoice(inv || null);
+    }, [id])
+
+    if (!invoice) {
+        return (
+            <div className="loading">
+                Loading invoice...
+            </div>
+        );
+    } 
 
     return (
         <div className="invoice-details-page">

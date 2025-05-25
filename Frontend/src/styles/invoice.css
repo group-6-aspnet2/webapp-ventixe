@@ -1,5 +1,18 @@
 /* Invoices Page */
 
+.admin-invoices-page {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+.left-panel  { display: flex; flex-direction: column; height: 100%; }
+.right-panel { height: 100%; overflow-y: auto; }
+.stats-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-bottom: 1.5rem; }
+.invoice-list-container { flex: 1; overflow-y: auto; }
+
+
+/*
 .invoice-body {
     padding: 2rem;
     background-color: #f8fafc;
@@ -23,6 +36,8 @@
     max-width: 36rem;
     margin: 0 auto;
 }
+
+*/
 
 /* Invoice Card */
 
@@ -73,6 +88,46 @@
 
 /* Invoice Details */
 
+.invoice-details-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.dates-row {
+  display: flex;
+  justify-content: space-between;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+.addresses-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.totals-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 1rem;
+  font-weight: 600;
+}
+.totals-row .grand-total {
+  color: #111827;
+}
+.note-text {
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+.actions-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+
+/*
 .detail-container {
     background: white;
     border-radius: 1rem;
@@ -96,5 +151,104 @@
 .notes-text {
     color: #555;
     font-size: 0.9rem;
+} 
+
+*/
+
+/* Ticket Details */
+
+.ticket-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.95rem;
 }
 
+.ticket-table thead tr {
+    background-color: #f3f4f6;
+}
+
+.ticket-table th,
+.ticket-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.ticket-table tbody tr.even {
+    background-color: #ffffff;
+}
+
+.ticket-table tbody tr.odd {
+    background-color: #fafafa;
+}
+
+.ticket-table tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+.ticket-table th {
+    font-weight: 600;
+    color: #374151;
+}
+
+.ticket-table td {
+    color: #4b5563;
+}
+
+/* Stats Card */
+
+.stats-card {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.stats-label { font-size: 0.875rem; color: #6b7280; }
+.stats-count { font-size: 1.5rem; font-weight: bold; color: #111827; }
+.stats-sub   { font-size: 0.75rem; color: #9ca3af; margin-top: 0.25rem; }
+
+/* Invoice List */
+
+.invoice-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.invoice-list-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.invoice-list-item:hover {
+  background: #f3f4f6;
+}
+.invoice-list-item.selected {
+  background: #faf5ff;
+  border: 1px solid #d8b4fe; /* lila kant */
+}
+.list-left {
+  display: flex;
+  flex-direction: column;
+}
+.list-number { font-weight: 600; }
+.list-date   { font-size: 0.75rem; color: #6b7280; }
+.list-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.list-amount { font-weight: 600; }
+.list-status {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  text-transform: capitalize;
+}
+.list-status.paid   { background: #dcfce7; color: #166534; }
+.list-status.unpaid { background: #fdf2f8; color: #9d174d; }
+.list-status.overdue{ background: #fee2e2; color: #991b1b; }
