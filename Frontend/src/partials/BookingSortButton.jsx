@@ -1,8 +1,8 @@
+import "../styles/bookingsStortStyle.css";
+
 const BookingSortButton = ({ setSortBy, sortBy }) => {
   return (
-    <div className="container">
-      <h2 className="title">Sort Events</h2>
-
+    <div className="select-container">
       <select
         className="dropdown"
         value={sortBy}
