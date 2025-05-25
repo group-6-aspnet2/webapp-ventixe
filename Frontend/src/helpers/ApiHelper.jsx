@@ -7,7 +7,7 @@ export const Get = async (apiBaseUrl, endpoint, success, error, final) => {
   })
     .then(async (res) => {
       if (res.ok) {
-        success(await res.json());
+        return success(await res.json());
       } else if (error) {
         res.text().then(error);
       }
@@ -19,36 +19,31 @@ export const Get = async (apiBaseUrl, endpoint, success, error, final) => {
     });
 };
 
-/*
-export const Post = async <T>(
-  endpoint: string,
-  body: string,
-  success: (response: T) => void,
-  error?: (message: string) => void,
-  final?: () => void
-) => {
+export const Post = async ( apiBaseUrl, endpoint, body, success, error, final) => {
   await fetch(`${apiBaseUrl}/${endpoint}`, {
     method: "POST",
-    credentials: "include",
     headers: {
       "Content-Type": "application/json",
     },
     body: body,
   })
-    .then(async (response) => {
-      if (response.ok) {
-        success(await response.json());
-      } else if (error) {
-        response.text().then(error);
-      }
-    })
+  .then(async (response) => {
+    if (response.ok) {
+      success(await response.json());
+    }
+    else if (error) {
+      response.text().then(error);
+    }
+  })
     .finally(() => {
       if (final) {
         final();
       }
-    });
+  });
 };
 
+
+/*
 export const Put = async <T>(
   endpoint: string,
   body: string,
