@@ -33,3 +33,39 @@ export const CategoryButton = styled(StyledButton)`
   gap: 0.5rem;
   justify-content: center;
 `;
+
+export const EventCategoryButton = styled(StyledButton)`
+  background-color: ${colors.grey_10};
+  color: ${colors.grey_90};
+  font-size: 11px; 
+  padding: rem 0.4rem;
+`;
+
+export const AdminCategoryButtonLarge = styled(StyledButton)`
+  background-color: ${({ eventStatus }) =>
+    eventStatus === "Active"
+    ? colors.primary_30
+    : eventStatus === "Draft"
+    ? colors.yellow_90
+    : eventStatus === "Past"
+    ? colors.grey_60
+    : colors.primary_30};  
+  color: ${colors.grey_90};
+  font-size: 14px; 
+  font-weight: 500;
+  padding: 0.9rem 2rem;<
+  // width: ${({active}) => active ? "50px" : "30px"}
+`;
+
+export const AdminCategoryButtonSmall = styled(AdminCategoryButtonLarge)`
+  font-size: 11px; 
+  padding: 0.3rem 0.9rem;
+`;
+
+export const AdminCreateButton = styled(StyledButton)`
+  background-color: ${colors.primary_100};
+  font-size: 14px; 
+  font-weight: 600;
+  padding: 0.9rem 1rem;
+`;
+
