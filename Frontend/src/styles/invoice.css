@@ -1,0 +1,100 @@
+/* Invoices Page */
+
+.invoice-body {
+    padding: 2rem;
+    background-color: #f8fafc;
+    min-height: 100vh;
+}
+
+.invoice-headline {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+}
+
+.invoices-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.invoice-body .invoices-container .invoice-card {
+    max-width: 36rem;
+    margin: 0 auto;
+}
+
+/* Invoice Card */
+
+.invoice-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 0.75rem;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.invoice-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.invoice-card-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.invoice-number {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #333;
+}
+
+.invoice-date {
+    font-size: 0.875rem;
+    color: #666;
+    margin-top: 0.25rem;
+}
+
+.invoice-card-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.invoice-total {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Invoice Details */
+
+.detail-container {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.addresses-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.invoice-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.notes-text {
+    color: #555;
+    font-size: 0.9rem;
+}
+

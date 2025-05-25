@@ -14,7 +14,7 @@ const InvoiceDetailPage = () => {
 
     const getInvoice = useCallback(async () => {
         await Get(
-            "https://invoiceserviceprovider-webapp.azurewebsites.net/api", // URL till invoiceserviceprovider
+            "https://invoiceserviceprovider-app.azurewebsites.net/api", // URL till invoiceserviceprovider
             `invoices/${params.id}`,
             (response) => {
                 setInvoice(response);

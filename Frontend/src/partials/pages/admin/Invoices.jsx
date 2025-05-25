@@ -8,7 +8,7 @@ const Invoices = () => {
   
   const getInvoices = useCallback(async () => {
     await Get(
-      "https://invoiceserviceprovider-webapp.azurewebsites.net/api", // invoice service URL,
+      "https://invoiceserviceprovider-app.azurewebsites.net/api", // invoice service URL,
       "invoices", // controller route
       (repsonse) => {
         setInvoices(repsonse);
