@@ -27,7 +27,6 @@ const Bookings = () => {
       "bookingStatuses",
       (response) => {
         setBookingStatuses([{ id: 0, statusName: "All" }, ...response]);
-        setActiveStatusId(response[0]?.id || 0);
       }
     );
   }, []);

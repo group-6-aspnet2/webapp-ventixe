@@ -8,10 +8,6 @@ export const StyledButton = styled.button`
   border-radius: 30px;
   font-size: 1rem;
   border: none;
-
-  &:hover {
-    cursor: pointer;
-  }
 `;
 
 export const StatusButton = styled(StyledButton)`
@@ -82,5 +78,6 @@ export const BookingFilterButton = styled(StyledButton)`
 
   &:hover {
     box-shadow: inset 0 0 10px #202020ad;
+    cursor: pointer;
   }
 `;

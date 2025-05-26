@@ -24,6 +24,8 @@ const BookingCard = ({ booking, isAdmin }) => {
             ? "/event-music.png"
             : booking.eventCategoryName.toUpperCase() === "FOOD"
             ? "/event-food.png"
+            : booking.eventCategoryName.toUpperCase() === "SPORT"
+            ? "/event-sport.jpg"
             : "/event-placeholder.png"
         }`}
       />
