@@ -34,7 +34,7 @@ const InvoiceCard = ({ invoice, isAdmin }) => {
       {/* Total and Status */}
       <div className='invoice-card-right'>
         <span className='invoice-total'>${invoice.total}</span>
-        <StatusButton status={invoice.statusName.toUpperCase()}>
+        <StatusButton className='status-button' $status={invoice.statusName.toUpperCase()}>
           {invoice.statusName}
         </StatusButton>
       </div>

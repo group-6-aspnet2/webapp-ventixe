@@ -62,7 +62,7 @@ export const mockInvoices = [
       { ticketCategory: "Silver",   price: 50,  quantity: 1, amount: 50 }
     ],
     total: 450,
-    statusName: "Paid",
+    statusName: "Overdue",
     userId:    "user456",
     bookingId: "booking456",
     eventId:   "event456"
@@ -107,7 +107,7 @@ export const mockInvoices = [
       { ticketCategory: "Silver",   price: 50,  quantity: 3, amount: 150 }
     ],
     total: 350,
-    statusName: "Paid",
+    statusName: "Held",
     userId:    "user456",
     bookingId: "booking456",
     eventId:   "event456"
@@ -152,6 +152,72 @@ export const mockInvoices = [
     ],
     total: 300,
     statusName: "Unpaid",
+    userId:    "user456",
+    bookingId: "booking456",
+    eventId:   "event456"
+  },
+    {
+    id: "8",
+    invoiceNumber: "INV10018",
+    issuedDate: "2029-02-16T03:45:00Z",
+    dueDate:    "2029-02-20T23:59:00Z",
+    billFromName:    "Event Management Co.",
+    billFromAddress: "123 Sunset Avenue, Los Angeles, CA, 90001",
+    billFromEmail:   "billing@eventmgmt.com",
+    billFromPhone:   "+1-800-555-1234",
+    billToName:    "John Doe",
+    billToAddress: "456 Elm Street, Seattle, WA, 98101",
+    billToEmail:   "john.doe@example.com",
+    billToPhone:   "+1-206-555-4321",
+    items: [
+      { ticketCategory: "Platinum", price: 200, quantity: 3, amount: 600 }
+    ],
+    total: 600,
+    statusName: "Unpaid",
+    userId:    "user456",
+    bookingId: "booking456",
+    eventId:   "event456"
+  },
+    {
+    id: "9",
+    invoiceNumber: "INV10019",
+    issuedDate: "2029-02-16T03:45:00Z",
+    dueDate:    "2029-02-20T23:59:00Z",
+    billFromName:    "Event Management Co.",
+    billFromAddress: "123 Sunset Avenue, Los Angeles, CA, 90001",
+    billFromEmail:   "billing@eventmgmt.com",
+    billFromPhone:   "+1-800-555-1234",
+    billToName:    "John Doe",
+    billToAddress: "456 Elm Street, Seattle, WA, 98101",
+    billToEmail:   "john.doe@example.com",
+    billToPhone:   "+1-206-555-4321",
+    items: [
+      { ticketCategory: "Silver", price: 150, quantity: 3, amount: 450 }
+    ],
+    total: 450,
+    statusName: "Held",
+    userId:    "user456",
+    bookingId: "booking456",
+    eventId:   "event456"
+  },
+    {
+    id: "10",
+    invoiceNumber: "INV10020",
+    issuedDate: "2029-02-16T03:45:00Z",
+    dueDate:    "2029-02-20T23:59:00Z",
+    billFromName:    "Event Management Co.",
+    billFromAddress: "123 Sunset Avenue, Los Angeles, CA, 90001",
+    billFromEmail:   "billing@eventmgmt.com",
+    billFromPhone:   "+1-800-555-1234",
+    billToName:    "John Doe",
+    billToAddress: "456 Elm Street, Seattle, WA, 98101",
+    billToEmail:   "john.doe@example.com",
+    billToPhone:   "+1-206-555-4321",
+    items: [
+      { ticketCategory: "Gold", price: 100, quantity: 2, amount: 200 }
+    ],
+    total: 200,
+    statusName: "Paid",
     userId:    "user456",
     bookingId: "booking456",
     eventId:   "event456"

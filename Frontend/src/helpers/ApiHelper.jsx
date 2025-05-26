@@ -7,7 +7,7 @@ export const Get = async (apiBaseUrl, endpoint, success, error, final) => {
   })
     .then(async (res) => {
       if (res.ok) {
-        success(await res.json());
+        return success(await res.json());
       } else if (error) {
         res.text().then(error);
       }

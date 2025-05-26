@@ -96,8 +96,8 @@ const InvoiceDetailPage = () => {
                 <DetailSection name="notes">
                     <h3>Note</h3>
                     <p className="notes-text">
-                        Please make payment by the due date to avoid penalites.
-                        Contact support at support@domain.com if you have any questions.
+                        Please make payment before the due date to avoid any penalties or cancellation of your ticket. 
+                        For any questions or concerns, contact our support team at support@eventmgmt.com or call +1-800-555-1234.
                     </p>
                 </DetailSection>
 

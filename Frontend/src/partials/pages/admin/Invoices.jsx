@@ -1,23 +1,39 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { mockInvoices } from "../../../mocks/mockInvoices";
-
-import StatsCard          from "../../../styles/components/StatsCard";
-import InvoiceList        from "../../../styles/components/InvoiceList";
+import { Get } from "../../../helpers/ApiHelper";
+import PageHeader from "../../../styles/components/PageHeader";
+import StatsCard from "../../../styles/components/StatsCard";
+import InvoiceList from "../../../styles/components/InvoiceList";
 import InvoiceDetailsCard from "../../../styles/components/InvoiceDetailsCard";
 
 import "../../../styles/invoice.css";
 
-export default function AdminInvoicesPage() {
-  const [invoices, setInvoices]         = useState([]);
+export default function Invoices() {
+  const [invoices, setInvoices] = useState([]);
   const [selectedInvoiceId, setSelectedInvoiceId] = useState(null);
 
   useEffect(() => {
-    // Hämta dina fakturor (här mock)
     setInvoices(mockInvoices);
-    // välj första som default
     setSelectedInvoiceId(mockInvoices[0]?.id ?? null);
-  }, []);
+  }, []); 
+  /*
+  const getInvoices = useCallback(async () => {
 
+    const res = await fetch("https://invoiceserviceprovider-app.azurewebsites.net/api/invoices")
+    if (!res.ok) {
+      console.error("Failed to fetch invoices:", res.statusText);
+      return;
+    }
+    const data = await res.json();
+    setInvoices(data)
+    console.log(data)
+  }, []); 
+
+  useEffect(() => {
+    getInvoices();
+    setSelectedInvoiceId(invoices[0]?.id ?? null);
+  }, [getInvoices, setSelectedInvoiceId]); 
+*/
   const paidCount   = invoices.filter(i => i.status === "Paid").length;
   const unpaidCount = invoices.filter(i => i.status === "Unpaid").length;
   const overdueCount= invoices.filter(i => i.status === "Overdue").length;
@@ -29,28 +45,37 @@ export default function AdminInvoicesPage() {
   const selectedInvoice = invoices.find(i => i.id === selectedInvoiceId);
 
   return (
-    <div className="admin-invoices-page">
-      {/* --- Vänster kolumn --- */}
-      <div className="left-panel">
-        <div className="stats-cards">
-          <StatsCard label="Paid"   count={paidCount}   total={paidTotal}   />
-          <StatsCard label="Unpaid" count={unpaidCount} total={unpaidTotal} />
-          <StatsCard label="Overdue"count={overdueCount}total={overdueTotal}/>
+    <div className="invoice-body">
+      <PageHeader
+        breadcrumbs={["Dashboard", "Invoices"]}
+        title="Admin Invoices"
+        />
+      <div className="admin-invoices-page">
+        {/* Left Column */}
+        <div className="left-panel">
+          <div className="stats-cards">
+            <StatsCard label="Paid" count="1805" total="1,600" />
+            <StatsCard label="Unpaid" count="535" total="615" />
+            <StatsCard label="Overdue" count="80" total="70"/>
+            {/* <StatsCard label="Paid" count={paidCount} total={paidTotal} />
+            <StatsCard label="Unpaid" count={unpaidCount} total={unpaidTotal} />
+            <StatsCard label="Overdue" count={overdueCount} total={overdueTotal}/> */}
+          </div>
+          <div className="invoice-list-container">
+            <InvoiceList
+              invoices={invoices}
+              selectedId={selectedInvoiceId}
+              onSelect={setSelectedInvoiceId}
+            />
+          </div>
         </div>
-        <div className="invoice-list-container">
-          <InvoiceList
-            invoices={invoices}
-            selectedId={selectedInvoiceId}
-            onSelect={setSelectedInvoiceId}
-          />
-        </div>
-      </div>
 
-      {/* --- Höger kolumn --- */}
-      <div className="right-panel">
-        {selectedInvoice && (
-          <InvoiceDetailsCard invoice={selectedInvoice} />
-        )}
+        {/* Right Column */}
+        <div className="right-panel">
+          {selectedInvoice && (
+            <InvoiceDetailsCard invoice={selectedInvoice} />
+          )}
+        </div>
       </div>
     </div>
   );
