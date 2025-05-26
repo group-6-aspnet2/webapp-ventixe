@@ -1,5 +1,131 @@
 .ticket-card {
-    background-color: var(--secondary-60);
+    background-color: var(--cool-grey-20);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 2rem;
     padding: 1rem;
-    margin: 1rem;
+    gap: 1rem;
+
+    .ticket-section {
+        padding: 0.5rem;
+    }
+
+    .ticket-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .ticket-image {
+            width: 100%;
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            margin-bottom: 0.5rem;
+            background-repeat: no-repeat;
+            background-blend-mode: overlay;
+
+            &.music {
+                background-image:
+                    linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent),
+                    url("/event-music.png");
+            }
+
+            &.food {
+                background-image:
+                    linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent),
+                    url("/event-food.png");
+            }
+
+            &.sports {
+                background-image:
+                    linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent),
+                    url("/event-sport.jpg");
+            }
+
+            &.default {
+                background-image:
+                    linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent),
+                    url("/event-placeholder.png");
+            }
+        }
+
+        .event-title {
+            h2 {
+                font-size: 1.2rem;
+                margin: 0;
+            }
+
+            .artists {
+                font-size: 0.85rem;
+                color: var(--grey-60);
+            }
+        }
+    }
+
+    .ticket-middle {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem 1rem;
+
+        .info-pair {
+            display: flex;
+            flex-direction: column;
+            font-size: 0.9rem;
+
+            .property-name {
+                font-weight: bold;
+            }
+        }
+    }
+
+    .ticket-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: 1px dashed var(--grey-40);
+        padding-top: 1rem;
+
+        .barcode-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .barcode {
+            width: 100px;
+            height: auto;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer {
+            font-size: 0.8rem;
+            text-align: center;
+            color: var(--grey-60);
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        flex-direction: row;
+        padding: 1.5rem;
+
+        .ticket-left {
+            flex: 1;
+        }
+
+        .ticket-middle {
+            flex: 2;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .ticket-right {
+            flex: 1;
+            border-left: 1px dashed var(--grey-40);
+            border-top: none;
+            padding-left: 1rem;
+        }
+    }
 }
