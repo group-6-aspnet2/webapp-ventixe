@@ -28,6 +28,15 @@
             background-repeat: no-repeat;
             background-blend-mode: overlay;
 
+            @media screen and (min-width: 768px) {
+                height: 200px;
+            }
+
+
+             @media screen and (min-width: 1024px) {
+                height: 150px;
+            }
+
             &.music {
                 background-image:
                     linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent),
@@ -98,6 +107,11 @@
             width: 100px;
             height: auto;
             margin-bottom: 0.5rem;
+
+            @media screen and (min-width: 768px) {
+                width: 150px;
+                
+            }
         }
 
         .footer {
@@ -107,22 +121,24 @@
         }
     }
 
+
+
     @media screen and (min-width: 1024px) {
         flex-direction: row;
         padding: 1.5rem;
 
         .ticket-left {
-            flex: 1;
+            flex: 1.3;
         }
 
         .ticket-middle {
-            flex: 2;
+            flex: 1.5;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
         }
 
         .ticket-right {
-            flex: 1;
+            flex: 1.2;
             border-left: 1px dashed var(--grey-40);
             border-top: none;
             padding-left: 1rem;
