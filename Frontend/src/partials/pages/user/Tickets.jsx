@@ -11,7 +11,6 @@ const Tickets = () => {
       `tickets/user/${localStorage.getItem("userId")}`,
       (response) => {
         setTickets(response);
-        console.log(response);
       }
     );
   }, []);
@@ -24,7 +23,11 @@ const Tickets = () => {
     <div>
       {tickets.length > 0 &&
         tickets.map((ticket) => (
-          <TicketCard key={ticket.id} ticket={ticket}></TicketCard>
+          <TicketCard
+            key={ticket.id}
+            eventCategoryName={ticket.eventCategoryName}
+            ticket={ticket}
+          ></TicketCard>
         ))}
     </div>
   );

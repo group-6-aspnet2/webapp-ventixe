@@ -49,7 +49,7 @@
                     url("/event-food.png");
             }
 
-            &.sports {
+            &.sport {
                 background-image:
                     linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent),
                     url("/event-sport.jpg");

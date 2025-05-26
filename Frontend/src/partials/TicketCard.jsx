@@ -1,11 +1,9 @@
 import "../styles/ticket.css";
-const TicketCard = ({ ticket, activeBooking }) => {
+const TicketCard = ({ ticket, eventCategoryName }) => {
   return (
     <div className="ticket-card">
       <div className="ticket-section ticket-left">
-        <div
-          className={`ticket-image ${activeBooking.eventCategoryName.toLowerCase()}`}
-        />
+        <div className={`ticket-image ${eventCategoryName.toLowerCase()}`} />
         <div className="event-title">
           <h2>{ticket.eventName}</h2>
         </div>

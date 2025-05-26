@@ -110,7 +110,7 @@ const BookingDetailPage = () => {
               tickets.map((ticket) => (
                 <TicketCard
                   key={ticket.id}
-                  activeBooking={activeBooking}
+                  eventCategoryName={ticket.eventCategoryName}
                   ticket={ticket}
                 ></TicketCard>
               ))}

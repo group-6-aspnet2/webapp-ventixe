@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Get } from "../../../helpers/ApiHelper";
+import TicketCard from "../../TicketCard";
 
 const Tickets = () => {
   const [tickets, setTickets] = useState([]);
@@ -10,7 +11,6 @@ const Tickets = () => {
       "tickets",
       (response) => {
         setTickets(response);
-        console.log(response);
       }
     );
   }, []);
@@ -23,7 +23,11 @@ const Tickets = () => {
     <div>
       {tickets.length > 0 &&
         tickets.map((ticket) => (
-          <TicketCard key={ticket.id} ticket={ticket}></TicketCard>
+          <TicketCard
+            key={ticket.id}
+            eventCategoryName={ticket.eventCategoryName}
+            ticket={ticket}
+          ></TicketCard>
         ))}
     </div>
   );
