@@ -36,6 +36,13 @@ const PortalLayout = () => {
       onlyAdmin: true,
       isAuthenticated: true,
     },
+    {
+      path: "/admin/inbox",
+      name: "Admin Inbox",
+      icon: <i className="fa-regular fa-envelope"></i>,
+      onlyAdmin: true,
+      isAuthenticated: true,
+    },
 
     {
       path: "/profile",
@@ -72,6 +79,13 @@ const PortalLayout = () => {
       path: "/tickets",
       name: "Tickets",
       icon: <i className="fa-regular fa-ticket"></i>,
+      onlyAdmin: false,
+      isAuthenticated: true,
+    },
+    {
+      path: "/inbox",
+      name: "Inbox",
+      icon: <i className="fa-regular fa-envelope"></i>,
       onlyAdmin: false,
       isAuthenticated: true,
     },
