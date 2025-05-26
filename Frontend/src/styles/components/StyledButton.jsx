@@ -8,6 +8,10 @@ export const StyledButton = styled.button`
   border-radius: 30px;
   font-size: 1rem;
   border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const StatusButton = styled(StyledButton)`
@@ -37,35 +41,46 @@ export const CategoryButton = styled(StyledButton)`
 export const EventCategoryButton = styled(StyledButton)`
   background-color: ${colors.grey_10};
   color: ${colors.grey_90};
-  font-size: 11px; 
+  font-size: 11px;
   padding: rem 0.4rem;
 `;
 
 export const AdminCategoryButtonLarge = styled(StyledButton)`
   background-color: ${({ eventStatus }) =>
     eventStatus === "Active"
-    ? colors.primary_30
-    : eventStatus === "Draft"
-    ? colors.yellow_90
-    : eventStatus === "Past"
-    ? colors.grey_60
-    : colors.primary_30};  
+      ? colors.primary_30
+      : eventStatus === "Draft"
+      ? colors.yellow_90
+      : eventStatus === "Past"
+      ? colors.grey_60
+      : colors.primary_30};  
   color: ${colors.grey_90};
   font-size: 14px; 
   font-weight: 500;
   padding: 0.9rem 2rem;<
-  // width: ${({active}) => active ? "50px" : "30px"}
+  // width: ${({ active }) => (active ? "50px" : "30px")}
 `;
 
 export const AdminCategoryButtonSmall = styled(AdminCategoryButtonLarge)`
-  font-size: 11px; 
+  font-size: 11px;
   padding: 0.3rem 0.9rem;
 `;
 
 export const AdminCreateButton = styled(StyledButton)`
   background-color: ${colors.primary_100};
-  font-size: 14px; 
+  font-size: 14px;
   font-weight: 600;
   padding: 0.9rem 1rem;
 `;
 
+export const BookingFilterButton = styled(StyledButton)`
+  background-color: ${({ isActive }) =>
+    isActive ? colors.primary_100 : colors.secondary_100};
+
+  box-shadow: ${({ isActive }) =>
+    isActive ? "inset 0 0 10px #202020ad" : "none"};
+
+  &:hover {
+    box-shadow: inset 0 0 10px #202020ad;
+  }
+`;

@@ -42,6 +42,12 @@
     border-radius: 10px;
     padding-bottom: 1.3rem;
     width: 100%;
+    transition: transform 0.2s ease;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+    }
 
     @media screen and (min-width: 768px) {
         padding-bottom: 1.5rem;
@@ -131,8 +137,8 @@
             flex-wrap: wrap;
         }
 
-          @media screen and (min-width: 1440px) {
-           padding: 1rem 2rem;
+        @media screen and (min-width: 1440px) {
+            padding: 1rem 2rem;
         }
 
         .booking-card {
@@ -142,11 +148,17 @@
             padding-bottom: 1.3rem;
             margin: 1rem;
             width: unset;
+            transition: transform 0.2s ease;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.05);
+            }
 
             @media screen and (min-width: 1024px) {
                 width: 47%;
             }
-   
+
             @media screen and (min-width: 1440px) {
                 width: 53%;
             }
