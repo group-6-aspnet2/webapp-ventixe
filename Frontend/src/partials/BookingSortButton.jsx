@@ -1,4 +1,4 @@
-import "../styles/bookingsStortStyle.css";
+import "../styles/bookingsSortStyle.css";
 
 const BookingSortButton = ({ setSortBy, sortBy }) => {
   return (
