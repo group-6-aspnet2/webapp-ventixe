@@ -37,18 +37,20 @@ const Bookings = () => {
     getStatuses();
   }, [getBookings, getStatuses]);
 
-  const sortedBookings = [...bookings].sort((a, b) => {
-    if (sortBy === "createDateOld") {
-      return new Date(a.createDate) - new Date(b.createDate);
-    } else if (sortBy === "createDateNew") {
-      return new Date(b.createDate) - new Date(a.createDate);
-    } else if (sortBy === "userId") {
-      return a.userId.localeCompare(b.userId);
-    } else if (sortBy === "eventName") {
-      return a.eventName.localeCompare(b.eventName);
-    }
-    return 0;
-  });
+  const sortedBookings = [...bookings]
+    .filter((x) => x.statusId === activeStatusId)
+    .sort((a, b) => {
+      if (sortBy === "createDateOld") {
+        return new Date(a.createDate) - new Date(b.createDate);
+      } else if (sortBy === "createDateNew") {
+        return new Date(b.createDate) - new Date(a.createDate);
+      } else if (sortBy === "userId") {
+        return a.userId.localeCompare(b.userId);
+      } else if (sortBy === "eventName") {
+        return a.eventName.localeCompare(b.eventName);
+      }
+      return 0;
+    });
 
   return (
     <div className="booking-body">
