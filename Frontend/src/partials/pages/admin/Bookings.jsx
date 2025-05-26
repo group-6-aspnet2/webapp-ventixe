@@ -7,7 +7,7 @@ import BookingFilterButtons from "../../BookingFilterButtons";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
-  const [sortBy, setSortBy] = useState("createDate");
+  const [sortBy, setSortBy] = useState("eventName");
   const [bookingStatuses, setBookingStatuses] = useState([]);
   const [activeStatusId, setActiveStatusId] = useState(0);
 
@@ -26,8 +26,8 @@ const Bookings = () => {
       "https://bookingserviceprovider-pe-gehkczd6hmhabreg.swedencentral-01.azurewebsites.net/api",
       "bookingStatuses",
       (response) => {
-        setBookingStatuses(response);
-        setActiveStatusId(response[0]?.id || 1);
+        setBookingStatuses([{ id: 0, statusName: "All" }, ...response]);
+        setActiveStatusId(response[0]?.id || 0);
       }
     );
   }, []);
@@ -38,14 +38,14 @@ const Bookings = () => {
   }, [getBookings, getStatuses]);
 
   const sortedBookings = [...bookings]
-    .filter((x) => x.statusId === activeStatusId)
+    .filter((x) => activeStatusId === 0 || x.statusId === activeStatusId)
     .sort((a, b) => {
       if (sortBy === "createDateOld") {
         return new Date(a.createDate) - new Date(b.createDate);
       } else if (sortBy === "createDateNew") {
         return new Date(b.createDate) - new Date(a.createDate);
-      } else if (sortBy === "userId") {
-        return a.userId.localeCompare(b.userId);
+      } else if (sortBy === "userName") {
+        return a.lastName.localeCompare(b.lastName);
       } else if (sortBy === "eventName") {
         return a.eventName.localeCompare(b.eventName);
       }

@@ -8,10 +8,10 @@ const BookingSortButton = ({ setSortBy, sortBy }) => {
         value={sortBy}
         onChange={(e) => setSortBy(e.target.value)}
       >
+        <option value="eventName">Event Name</option>
         <option value="createDateNew">Date (newest)</option>
         <option value="createDateOld">Date (oldest)</option>
-        <option value="userId">User ID</option>
-        <option value="eventName">Event Name</option>
+        <option value="userName">User Surname</option>
       </select>
     </div>
   );
