@@ -55,7 +55,7 @@ const BookingCard = ({ booking, isAdmin }) => {
               Customer: {booking.firstName} {booking.lastName}
             </p>{" "}
             <p>
-              UserId: <p className="card-event-time">{booking.userId}</p>
+              UserId: <span className="card-event-time">{booking.userId}</span>
             </p>
           </>
         )}
