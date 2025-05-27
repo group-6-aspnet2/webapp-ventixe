@@ -22,6 +22,9 @@ const AdminInbox = lazy(() => import("../partials/pages/admin/Inbox"));
 const BookingDetail = lazy(() => import("../partials/pages/BookingDetailPage"));
 const AdminTickets = lazy(() => import("../partials/pages/admin/Tickets"));
 const UserTickets = lazy(() => import("../partials/pages/user/Tickets"));
+const UserInvoices = lazy(() => import("../partials/pages/user/Invoices"));
+const AdminInvoices = lazy(() => import("../partials/pages/admin/Invoices"));
+const InvoiceDetail = lazy(() => import("../partials/pages/InvoiceDetailPage"));
 
 export const routes = [
   {
@@ -46,6 +49,8 @@ export const routes = [
       { path: "/inbox", element: <UserInbox /> },
       { path: "/booking/:id", element: <BookingDetail /> },
       { path: "/tickets", element: <UserTickets /> },
+      { path: "/invoices", element: <UserInvoices /> },
+      { path: "/invoice/:id", element: <InvoiceDetail /> },
     ],
   },
   {
@@ -59,6 +64,8 @@ export const routes = [
       { path: "/admin/inbox", element: <AdminInbox /> },
       { path: "/admin/booking/:id", element: <BookingDetail /> },
       { path: "/admin/tickets", element: <AdminTickets /> },
+      { path: "/admin/invoices", element: <AdminInvoices /> },
+      { path: "/admin/invoice/:id", element: <InvoiceDetail /> },
     ],
   },
   {

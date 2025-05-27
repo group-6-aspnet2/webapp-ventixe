@@ -30,6 +30,13 @@ const PortalLayout = () => {
       isAuthenticated: true,
     },
     {
+      path: "/admin/invoices",
+      name: "Admin Invoices",
+      icon: <i className="fa-regular fa-receipt"></i>,
+      onlyAdmin: true,
+      isAuthenticated: true,
+    },
+    {
       path: "/admin/tickets",
       name: "Admin Tickets",
       icon: <i className="fa-regular fa-ticket"></i>,
@@ -72,6 +79,13 @@ const PortalLayout = () => {
       name: "Bookings",
       // img: "/bookings-iconsvg.svg",
       icon: <i className="fa-regular fa-square-check"></i>,
+      onlyAdmin: false,
+      isAuthenticated: true,
+    },
+    {
+      path: "/invoices",
+      name: "Invoices",
+      icon: <i className="fa-regular fa-receipt"></i>,
       onlyAdmin: false,
       isAuthenticated: true,
     },
