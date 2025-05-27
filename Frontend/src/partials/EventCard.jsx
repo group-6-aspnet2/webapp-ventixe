@@ -1,9 +1,14 @@
-import React from 'react'
-import { AdminCategoryButtonSmall, EventCategoryButton } from '../styles/components/StyledButton'
+import React, { useState } from 'react'
 
-const EventCard = ({ event }) => {
+import { AdminCategoryButtonSmall, CreateBookingButton, EventCategoryButton, } from '../styles/components/StyledButton'
+import BookingModalLayout from './layouts/BookingModalLayout';
+
+const EventCard = ({ event, getEvents }) => {
+    const [showModal, setShowModal] = useState(false);
+    const [successMessage, setSuccessMessage] = useState('');
 
   return (
+    <>
     <div key={event.eventId} className="event-card">
         <div className="event-card-header">
             <EventCategoryButton>
@@ -19,7 +24,18 @@ const EventCard = ({ event }) => {
             <h3 className="event-card-title">{event.eventName}</h3>
             <p><i className="fa-light fa-location-dot"></i>{event.eventLocation}</p>
         </div>
-    </div>  
+
+        <div className="event-card-footer">
+            <CreateBookingButton onClick={() => setShowModal(true)}>Book</CreateBookingButton>
+        </div>
+    </div>
+        
+        {showModal && 
+            <BookingModalLayout event={event} onClose={() => setShowModal(false)} onSuccess={() => {setSuccessMessage(`Booking to ${event.eventName} is completed!`); 
+            getEvents();
+        }}/>
+        }
+    </>
     )
 }
 

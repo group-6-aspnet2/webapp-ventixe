@@ -26,7 +26,7 @@ export const ModalContainer = styled.div`
 
 export const CloseModalButton = styled.button`
     position: absolute;
-    top: 0.8rem;
+    top: 1rem;
     right: 1rem;
     background: none;
     border: none;
@@ -36,5 +36,6 @@ export const CloseModalButton = styled.button`
 
     &:hover {
     background-color: ${colors.grey_30};
+    border-radius: 5px;
     }
 `;

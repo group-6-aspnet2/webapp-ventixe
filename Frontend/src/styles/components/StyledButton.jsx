@@ -67,6 +67,15 @@ export const AdminCreateButton = styled(StyledButton)`
   font-size: 14px;
   font-weight: 600;
   padding: 0.9rem 1rem;
+  cursor: pointer;
+`;
+
+export const CreateBookingButton = styled(StyledButton)`
+  background-color: ${colors.primary_100};
+  font-size: 14px; 
+  font-weight: 600;
+  padding: 0.9rem 1rem;
+  cursor: pointer;
 `;
 
 export const BookingFilterButton = styled(StyledButton)`
