@@ -28,6 +28,7 @@ export const Post = async ( apiBaseUrl, endpoint, body, success, error, final) =
     body: body,
   })
   .then(async (response) => {
+    console.log(response)
     if (response.ok) {
       success(await response.json());
     }

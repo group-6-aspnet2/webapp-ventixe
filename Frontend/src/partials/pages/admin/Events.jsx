@@ -6,8 +6,9 @@ import { AdminCategoryButtonLarge, AdminCreateButton } from '../../../styles/com
 import CreateModalLayout from '../../layouts/CreateModalLayout';
 
 const Events = () => {
-const [createModal, setCreateModal] = useState(false);
+const [showModal, setShowModal] = useState(false);
 const [events, setEvents] = useState([]);
+const [successMessage, setSuccessMessage] = useState('');
 
 const getEvents = useCallback(async () => {
   const eventUrl = "https://cs-ventixeevent.azurewebsites.net";
@@ -17,13 +18,16 @@ const getEvents = useCallback(async () => {
    );
 }, []);
 
-const refreshEvents = () => {
-  getEvents();
-};
-
 useEffect (() => {
   getEvents();
 }, [getEvents]);
+
+useEffect(() => {
+  if (successMessage) {
+    const timer = setTimeout(() => setSuccessMessage(''), 4000);
+    return () => clearTimeout(timer);
+  }
+}, [successMessage]);
 
   return (
     <div className='event-body'>
@@ -33,15 +37,20 @@ useEffect (() => {
           <AdminCategoryButtonLarge eventStatus="Draft">Draft</AdminCategoryButtonLarge>
           <AdminCategoryButtonLarge eventStatus="Past">Past</AdminCategoryButtonLarge> 
         </div>
-           <AdminCreateButton onClick={() => setCreateModal(true)}><i class="fa-solid fa-plus"></i> Create Event</AdminCreateButton>
+           <AdminCreateButton onClick={() => setShowModal(true)}><i className="fa-solid fa-plus"></i> Create Event</AdminCreateButton>
       </div>
 
-       {createModal && 
-          <CreateModalLayout onClose={() => setCreateModal(false)} onSuccess={refreshEvents}/>
+       {showModal && 
+          <CreateModalLayout onClose={() => setShowModal(false)} onSuccess={getEvents}/>
        }
+
+       {successMessage && (
+        <div className="success-message">{successMessage}</div>
+       )}
+
       <div className='event-container'>
         {events.length > 0 && events.map((e) => (
-          <EventCard event={e} key={e.eventId} />
+          <EventCard event={e} key={e.eventId} gerEvents={getEvents} setSuccessMessage={setSuccessMessage} />
         ))}
       </div>
     </div>
