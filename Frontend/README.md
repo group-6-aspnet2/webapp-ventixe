@@ -1,12 +1,13 @@
-# React + Vite
+# Ventixe Web App
+Ventixe is a system that handles events and bookings and connected services such as invoices. The app fetches data from multiple microservices that were built by different people. The system have login and signup functionality where a visitor that wants to book an event can create an account. A user should be able to book an event, handle the booking and see the users tickets and invoices. When a booking is made the provided email should recieve an email with a booking confirmation.  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Technologies
+- JavaScript
+- ReactJs
+- Vite
+- Css
+- Styled Components
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+ ## Improvements
+ 
